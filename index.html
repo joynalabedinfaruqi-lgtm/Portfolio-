@@ -75,10 +75,23 @@ h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(42px,7vw,74px);l
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px;text-align:center}
 .stat b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:32px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat span{font-size:12.5px;color:var(--mut);font-weight:600;letter-spacing:.4px}
-.portrait-wrap{position:relative;justify-self:center}
-.portrait-ring{width:min(330px,74vw);aspect-ratio:1;border-radius:50%;padding:5px;background:var(--grad)}
-.portrait-ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid var(--bg)}
-.portrait-tag{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:rgba(10,10,18,.92);border:1px solid var(--line);padding:8px 18px;border-radius:999px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.portrait-wrap{position:relative;justify-self:center;width:min(340px,80vw)}
+.portrait-wrap::before{content:"";position:absolute;inset:-28px;background:radial-gradient(closest-side,rgba(255,45,160,.22),transparent 70%),radial-gradient(closest-side at 20% 90%,rgba(0,229,255,.18),transparent 70%);filter:blur(6px);z-index:0}
+.portrait-card{position:relative;z-index:1;border-radius:26px;padding:5px;background:var(--grad);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.portrait-card .ph{border-radius:22px;overflow:hidden;position:relative;aspect-ratio:4/5;background:#0a0a14}
+.portrait-card .ph img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.portrait-card .ph::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(transparent,rgba(4,4,10,.88))}
+.p-avail{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;background:rgba(8,8,14,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);padding:6px 13px;border-radius:999px;font-size:11.5px;font-weight:700}
+.p-avail i{width:8px;height:8px;border-radius:50%;background:#2fe38a;box-shadow:0 0 10px #2fe38a;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+.p-caption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px 18px}
+.p-caption b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:21px;letter-spacing:.6px;text-transform:uppercase;line-height:1.15}
+.p-caption span{font-size:12px;color:#cfcfe0;font-weight:600;letter-spacing:.4px}
+.p-chip{position:absolute;z-index:2;background:rgba(10,10,18,.88);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:9px 14px;font-size:14px;font-weight:700;box-shadow:0 12px 26px rgba(0,0,0,.45);line-height:1.25}
+.p-chip small{display:block;color:var(--mut);font-size:10.5px;font-weight:600;letter-spacing:.4px}
+.p-chip.a{top:64px;right:-16px}
+.p-chip.b{bottom:86px;left:-16px}
+@media(max-width:600px){.p-chip.a{right:4px}.p-chip.b{left:4px}}
 .marquee{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:15px 0}
 .mq-track{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:Anton,sans-serif;font-size:16px;letter-spacing:2.5px;color:var(--dim);text-transform:uppercase}
 .mq-track span{padding:0 26px;white-space:nowrap}
@@ -222,9 +235,16 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
           <a class="btn btn-ghost" href="#services">See Rates</a>
         </div>
       </div>
-      <div class="portrait-wrap">
-        <div class="portrait-ring"><img src="portrait.jpg" alt="Joynal Abedin Faruqi, video editor" /></div>
-        <div class="portrait-tag">Video Editor · Bangladesh → Worldwide</div>
+      <div class="portrait-wrap reveal">
+        <div class="portrait-card">
+          <div class="ph">
+            <img src="portrait.jpg" alt="Joynal Abedin Faruqi, video editor and motion designer" />
+            <span class="p-avail"><i></i> Available for projects</span>
+            <div class="p-caption"><b>Joynal Abedin Faruqi</b><span>Video Editor · Motion Designer — Bangladesh → Worldwide</span></div>
+          </div>
+        </div>
+        <div class="p-chip a">48h<small>Shorts delivery</small></div>
+        <div class="p-chip b">25+<small>Projects published</small></div>
       </div>
     </div>
     <div class="stats">
