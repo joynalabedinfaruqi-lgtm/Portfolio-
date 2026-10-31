@@ -115,7 +115,7 @@ h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(44px,7.4vw,80px)
 .work-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .18s,border-color .18s}
 .work-card:hover{transform:translateY(-5px);border-color:#3a3a5c}
 .work-card.hide{display:none}
-.facade{position:relative;aspect-ratio:16/10;background:#000;cursor:pointer;overflow:hidden}
+.facade{position:relative;aspect-ratio:9/16;background:#000;cursor:pointer;overflow:hidden}
 .facade img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .3s}
 .work-card:hover .facade img{transform:scale(1.05)}
 .facade .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
@@ -190,7 +190,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
 @media(max-width:920px){
   .hero-grid{grid-template-columns:1fr}
   .portrait-wrap{order:-1}
-  .work-grid,.pillars,.steps6,.pkg-grid,.tools-grid{grid-template-columns:1fr}
+  .pillars,.steps6,.pkg-grid,.tools-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .sec{padding:70px 0}
@@ -297,7 +298,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
     <div class="work-grid">
       <article class="work-card reveal" data-cat="explainer">
         <div class="facade" data-yt="lmFao0JuKn4">
-          <img loading="lazy" src="https://i.ytimg.com/vi/lmFao0JuKn4/hqdefault.jpg" alt="That $60 Game Cost You a Fortune — explainer Short" />
+          <img loading="lazy" src="https://i.ytimg.com/vi/lmFao0JuKn4/oar2.jpg" alt="That $60 Game Cost You a Fortune — explainer Short" />
           <span class="tag">FLAT-VECTOR EXPLAINER</span>
           <div class="play"><i>▶</i></div>
         </div>
@@ -309,7 +310,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
       </article>
       <article class="work-card reveal" data-cat="motion">
         <div class="facade" data-yt="1f4CdikRfpk">
-          <img loading="lazy" src="https://i.ytimg.com/vi/1f4CdikRfpk/hqdefault.jpg" alt="Why Free Samples Empty Your Wallet — numbers-motion Short" />
+          <img loading="lazy" src="https://i.ytimg.com/vi/1f4CdikRfpk/oar2.jpg" alt="Why Free Samples Empty Your Wallet — numbers-motion Short" />
           <span class="tag">NUMBERS-MOTION</span>
           <div class="play"><i>▶</i></div>
         </div>
@@ -321,7 +322,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
       </article>
       <article class="work-card reveal" data-cat="cinematic">
         <div class="facade" data-yt="ukYQ8JAYTl4">
-          <img loading="lazy" src="https://i.ytimg.com/vi/ukYQ8JAYTl4/hqdefault.jpg" alt="Why More Money Never Feels Like Enough — cinematic Short" />
+          <img loading="lazy" src="https://i.ytimg.com/vi/ukYQ8JAYTl4/oar2.jpg" alt="Why More Money Never Feels Like Enough — cinematic Short" />
           <span class="tag">CINEMATIC SHORT</span>
           <div class="play"><i>▶</i></div>
         </div>
@@ -333,7 +334,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
       </article>
       <article class="work-card reveal" data-cat="cinematic">
         <div class="facade" data-yt="0nPOmW1i1Vg">
-          <img loading="lazy" src="https://i.ytimg.com/vi/0nPOmW1i1Vg/hqdefault.jpg" alt="Why Unfinished Tasks Haunt Your Brain — cinematic Short" />
+          <img loading="lazy" src="https://i.ytimg.com/vi/0nPOmW1i1Vg/oar2.jpg" alt="Why Unfinished Tasks Haunt Your Brain — cinematic Short" />
           <span class="tag">CINEMATIC SHORT</span>
           <div class="play"><i>▶</i></div>
         </div>
@@ -345,7 +346,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
       </article>
       <article class="work-card reveal" data-cat="cinematic">
         <div class="facade" data-yt="Mq1BSt1sTsg">
-          <img loading="lazy" src="https://i.ytimg.com/vi/Mq1BSt1sTsg/hqdefault.jpg" alt="Why Songs You Hated Start Growing on You — cinematic Short" />
+          <img loading="lazy" src="work-v22.jpg" alt="Why Songs You Hated Start Growing on You — cinematic Short" />
           <span class="tag">CINEMATIC SHORT</span>
           <div class="play"><i>▶</i></div>
         </div>
