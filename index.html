@@ -121,6 +121,9 @@ h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(44px,7.4vw,80px)
 .facade .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .facade .play i{width:62px;height:62px;border-radius:50%;background:rgba(10,10,16,.72);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:21px;color:#fff;padding-left:4px}
 .facade iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.facade.wide{aspect-ratio:16/9}
+.facade video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.work-card.wide{grid-column:1/-1}
 .facade .tag{position:absolute;top:10px;left:10px;background:rgba(5,5,10,.82);padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--cy)}
 .work-body{padding:17px 19px 19px}
 .work-body h3{font-size:16.5px;line-height:1.35;margin-bottom:7px}
@@ -286,7 +289,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
     <div class="sec-head reveal">
       <span class="sec-tag"><b>02</b> Portfolio</span>
       <h2>Selected Work</h2>
-      <p>Real, published videos — every one produced end-to-end by me: concept, script, voice, edit, captions and thumbnail. Tap any video to play it here.</p>
+      <p>Real published videos and product demos, every one produced end-to-end by me: concept, script, voice, edit, captions and thumbnail. Tap any video to play it here.</p>
     </div>
     <div class="filters reveal">
       <button class="fbtn active" data-filter="all">All Work</button>
@@ -296,6 +299,16 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--dim);font-siz
       <button class="fbtn" data-filter="kids">Kids Channel</button>
     </div>
     <div class="work-grid">
+      <article class="work-card wide reveal" data-cat="motion">
+        <div class="facade wide" data-video="work-saas.mp4">
+          <img loading="lazy" src="work-saas.jpg" alt="Pulse — SaaS product video demo: funnel analytics dashboard" />
+          <span class="tag">SAAS PRODUCT DEMO</span>
+          <div class="play"><i>▶</i></div>
+        </div>
+        <div class="work-body">
+          <h3>Pulse — SaaS Product Video</h3>
+        </div>
+      </article>
       <article class="work-card reveal" data-cat="explainer">
         <div class="facade" data-yt="lmFao0JuKn4">
           <img loading="lazy" src="https://i.ytimg.com/vi/lmFao0JuKn4/oar2.jpg" alt="That $60 Game Cost You a Fortune — explainer Short" />
@@ -584,7 +597,13 @@ document.querySelectorAll('#navLinks a').forEach(function(a){a.addEventListener(
 })();
 document.querySelectorAll('.facade').forEach(function(f){
   f.addEventListener('click',function(){
-    var id=f.dataset.yt;if(!id||f.dataset.loaded)return;f.dataset.loaded='1';
+    var id=f.dataset.yt,vid=f.dataset.video;
+    if(f.dataset.loaded||(!id&&!vid))return;f.dataset.loaded='1';
+    if(vid){
+      var v=document.createElement('video');
+      v.src=vid;v.controls=true;v.autoplay=true;v.playsInline=true;
+      f.innerHTML='';f.appendChild(v);return;
+    }
     var ifr=document.createElement('iframe');
     ifr.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
     ifr.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';
